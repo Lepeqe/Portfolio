@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-pm-po",
+  "version": "1.0.0",
+  "description": "Portfolio profesional para Product Manager y Product Owner",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  },
+  "keywords": [
+    "portfolio",
+    "product-manager",
+    "product-owner",
+    "pm",
+    "po",
+    "agile",
+    "scrum"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT"
+} 
