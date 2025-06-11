@@ -1,23 +1,24 @@
-# Portfolio PM/PO 🚀
+HEAD
+Portfolio PM/PO 🚀
 
 Portfolio profesional moderno para Product Manager y Product Owner, construido con tecnologías web estándar (HTML5, CSS3, TypeScript) y Tailwind CSS.
 
-## ✨ Características
+✨ Características
 
-### 🎯 **Diseño Específico para PM/PO**
+🎯 **Diseño Específico para PM/PO**
 - Secciones optimizadas para mostrar experiencia en gestión de productos
 - Métricas de impacto y KPIs prominentes
 - Casos de éxito con datos cuantificables
 - Metodologías ágiles y frameworks destacados
 
-### 🔧 **Tecnologías Modernas**
+🔧 **Tecnologías Modernas**
 - **TypeScript** para desarrollo robusto y type-safe
 - **Tailwind CSS** para estilos profesionales y responsive
 - **Vite** para desarrollo rápido y build optimizado
 - **Vanilla JavaScript** sin dependencias pesadas
 - **Arquitectura modular** y escalable
 
-### 🌗 **Experiencia de Usuario Superior**
+🌗 **Experiencia de Usuario Superior**
 - Tema claro/oscuro con persistencia
 - Diseño responsive optimizado para todos los dispositivos
 - Animaciones suaves y profesionales
@@ -25,21 +26,21 @@ Portfolio profesional moderno para Product Manager y Product Owner, construido c
 - Formulario de contacto funcional
 - Accesibilidad web (WCAG)
 
-### 📊 **Contenido Estructurado**
+📊 **Contenido Estructurado**
 - **Proyectos**: Casos de éxito con métricas de impacto
 - **Experiencia**: Timeline profesional detallado
 - **Skills**: Competencias organizadas por categoría
 - **Metodologías**: Frameworks ágiles y de producto
 - **Certificaciones**: Validación formal de conocimientos
 
-## 🚀 Inicio Rápido
+🚀 Inicio Rápido
 
-### Prerrequisitos
+Prerrequisitos
 - Node.js 18+ y npm
 
-### Instalación
+Instalación
 
-```bash
+bash
 # Clonar el repositorio
 git clone https://github.com/tu-usuario/portfolio-pm-po.git
 cd portfolio-pm-po
@@ -53,7 +54,7 @@ npm run dev
 # El portfolio estará disponible en http://localhost:3000
 ```
 
-### Comandos Disponibles
+Comandos Disponibles
 
 ```bash
 # Desarrollo
@@ -67,9 +68,9 @@ npm run preview      # Preview del build de producción
 npm run type-check   # Verificación de tipos TypeScript
 ```
 
-## 📁 Estructura del Proyecto
+📁 Estructura del Proyecto
 
-```
+
 portfolio-pm-po/
 ├── src/
 │   ├── data/
@@ -87,28 +88,28 @@ portfolio-pm-po/
 └── package.json            # Dependencias y scripts
 ```
 
-## 🛠️ Personalización
+🛠️ Personalización
 
-### 1. **Datos Personales**
+1. **Datos Personales**
 Edita `src/data/portfolio.ts` para actualizar:
 - Información personal
 - Proyectos y métricas
 - Experiencia laboral
 - Skills y certificaciones
 
-### 2. **Estilos y Branding**
+2. **Estilos y Branding**
 Modifica `tailwind.config.js` para personalizar:
 - Colores primarios y secundarios
 - Tipografías
 - Espaciados y dimensiones
 
-### 3. **Contenido HTML**
+3. **Contenido HTML**
 Actualiza `index.html` para cambiar:
 - Información de contacto
 - Meta tags y SEO
 - Enlaces a redes sociales
 
-## 🎨 Tema y Personalización Visual
+🎨 Tema y Personalización Visual
 
 El portfolio incluye un sistema de temas profesional:
 
@@ -117,7 +118,7 @@ El portfolio incluye un sistema de temas profesional:
 - **Persistencia**: Recuerda la preferencia del usuario
 - **Detección automática**: Respeta la preferencia del sistema
 
-### Colores Personalizados
+Colores Personalizados
 
 ```css
 /* Ejemplo de personalización en tailwind.config.js */
@@ -130,7 +131,7 @@ colors: {
 }
 ```
 
-## 📱 Responsive Design
+📱 Responsive Design
 
 Diseñado mobile-first con breakpoints optimizados:
 
@@ -139,7 +140,7 @@ Diseñado mobile-first con breakpoints optimizados:
 - **Desktop**: > 1024px
 - **Wide**: > 1280px
 
-## ⚡ Performance
+⚡ Performance
 
 - **Lazy Loading**: Imágenes y componentes
 - **Code Splitting**: Carga modular
@@ -147,7 +148,7 @@ Diseñado mobile-first con breakpoints optimizados:
 - **Compresión**: Assets minimizados
 - **CDN Ready**: Optimizado para CDN
 
-## 🔒 Seguridad y Accesibilidad
+🔒 Seguridad y Accesibilidad
 
 - **HTTPS**: Configurado para SSL
 - **ARIA**: Labels y roles apropiados
@@ -155,33 +156,33 @@ Diseñado mobile-first con breakpoints optimizados:
 - **Screen Readers**: Compatible con lectores de pantalla
 - **Contrast**: Ratios de contraste WCAG AA
 
-## 📈 SEO y Metadatos
+📈 SEO y Metadatos
 
 - **Open Graph**: Integración para redes sociales
 - **Schema.org**: Structured data para mejor indexación
 - **Meta tags**: Optimizados para SEO
 - **Sitemap**: Generación automática
 
-## 🚀 Deployment
+🚀 Deployment
 
-### Netlify
-```bash
+Netlify
+bash
 npm run build
 # Deploy la carpeta dist/
-```
 
-### Vercel
-```bash
+
+Vercel
+bash
 vercel --prod
-```
 
-### GitHub Pages
-```bash
+
+GitHub Pages
+bash
 npm run build
 # Push dist/ a rama gh-pages
-```
 
-## 🤝 Contribución
+
+🤝 Contribución
 
 1. Fork el proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/nueva-caracteristica`)
@@ -189,11 +190,11 @@ npm run build
 4. Push a la rama (`git push origin feature/nueva-caracteristica`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
-## 🙏 Agradecimientos
+🙏 Agradecimientos
 
 - [Tailwind CSS](https://tailwindcss.com/) por el framework de CSS
 - [TypeScript](https://www.typescriptlang.org/) por el tipado estático
@@ -205,3 +206,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 **Creado con 💙 para la comunidad PM/PO**
 
 Si este portfolio te fue útil, ¡dale una ⭐ en GitHub! 
+=======
+# Portfolio
+Mi_Portfolio
+fadc24376ecaeadaee0ac224f52cf61691d29fa4
