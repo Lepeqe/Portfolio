@@ -63,6 +63,37 @@
     }
   </script>
   
+  <!-- Estilos para animaciones de entrada -->
+  <style>
+    /* Animaciones de entrada */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Animación de flotación para elementos decorativos */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Estilos adicionales para el botón back-to-top */
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
 </head>
@@ -71,6 +102,9 @@
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-700 text-white px-6 py-3 rounded-lg font-medium z-50 transition-all duration-300">
     Saltar al contenido
   </a>
+  
+  <!-- Barra de progreso de scroll -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 via-accent-400 to-blue-600 transition-all duration-300 ease-out z-50" style="width: 0%"></div>
   
   <!-- Navigation -->
   <header class="fixed top-0 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
@@ -126,7 +160,7 @@
 
   <main id="main-content" class="pt-20">
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-gray-800 overflow-hidden fade-in-up">
       <!-- Decorative Elements -->
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-20 right-20 w-72 h-72 bg-blue-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
@@ -174,7 +208,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800">
+    <section id="about" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800 fade-in-up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <!-- Título en cajita elegante y tecnológica -->
@@ -362,7 +396,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800">
+    <section id="skills" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800 fade-in-up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <!-- Título en cajita elegante y tecnológica -->
@@ -553,7 +587,7 @@
     </section>
 
     <!-- Credentials Section -->
-    <section id="credentials" class="py-24 bg-gradient-to-b from-gray-800 to-gray-900">
+    <section id="credentials" class="py-24 bg-gradient-to-b from-gray-800 to-gray-900 fade-in-up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <!-- Título en cajita elegante y tecnológica -->
@@ -784,7 +818,7 @@
     </div>
     
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-gray-800 via-black to-gray-900">
+    <section id="contact" class="py-24 bg-gradient-to-br from-gray-800 via-black to-gray-900 fade-in-up">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <!-- Título en cajita elegante y tecnológica -->
@@ -926,6 +960,17 @@
       </div>
     </div>
   </footer>
+
+  <!-- Botón Volver Arriba -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-blue-500/25 hover:shadow-xl border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-110 opacity-0 invisible group z-40" title="Volver arriba" aria-label="Volver arriba">
+    <!-- Icono de flecha -->
+    <svg class="w-6 h-6 mx-auto group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+    
+    <!-- Efecto de glow -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-accent-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md scale-150"></div>
+  </button>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

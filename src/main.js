@@ -23,6 +23,15 @@ class PortfolioApp {
       console.log('✨ Configurando animaciones...');
       this.setupAnimations();
       
+      console.log('📊 Configurando indicador de progreso...');
+      this.setupScrollProgress();
+      
+      console.log('⬆️ Configurando botón volver arriba...');
+      this.setupBackToTop();
+      
+      console.log('🎭 Configurando animaciones de entrada...');
+      this.setupScrollAnimations();
+      
       console.log('📅 Actualizando año actual...');
       this.updateCurrentYear();
       
@@ -364,9 +373,85 @@ class PortfolioApp {
    * Actualiza el año actual en el footer
    */
   updateCurrentYear() {
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear().toString();
+    const currentYear = new Date().getFullYear();
+    const yearElements = document.querySelectorAll('.current-year');
+    yearElements.forEach(element => {
+      element.textContent = currentYear;
+    });
+  }
+
+  /**
+   * Configura la barra de progreso de scroll
+   */
+  setupScrollProgress() {
+    const progressBar = document.getElementById('scroll-progress');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / documentHeight) * 100;
+      
+      progressBar.style.width = `${Math.min(scrollPercent, 100)}%`;
+    });
+  }
+
+  /**
+   * Configura el botón volver arriba
+   */
+  setupBackToTop() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (!backToTopButton) return;
+
+    // Mostrar/ocultar botón basado en scroll
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    // Funcionalidad del botón
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  /**
+   * Configura las animaciones de entrada al hacer scroll
+   */
+  setupScrollAnimations() {
+    const elements = document.querySelectorAll('.fade-in-up');
+    
+    // Configuración del Intersection Observer
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          // Una vez animado, no necesitamos seguir observando
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observar todos los elementos con animación
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+
+    // Animar inmediatamente el hero section si está visible
+    const heroSection = document.getElementById('home');
+    if (heroSection && window.pageYOffset < 100) {
+      heroSection.classList.add('animate');
     }
   }
 }
